@@ -1,8 +1,11 @@
+from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
 from langchain_classic.chains import RetrievalQA
+
+load_dotenv()
 
 loader = PyPDFLoader("processo.pdf")
 documents = loader.load()
